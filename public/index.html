@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizzería</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <style>
+        body, html {height: 100%}
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+        .menu {display: none}
+        .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("https://www.w3schools.com/w3images/pizza.jpg");
+            min-height: 90%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+    <form action="/send-email" method="POST">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="message" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+        <a href="#" class="w3-bar-item w3-button">INICIO</a>
+        <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+        <a href="#about" class="w3-bar-item w3-button">ACERCA DE</a>
+        <a href="#contact" class="w3-bar-item w3-button">CONTACTO</a>
+    </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-padding">
+        <span class="w3-tag w3-xlarge">Abierto desde 10am - 12pm</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+        <span class="w3-text-white w3-hide-small" style="font-size:100px">LA<br>PIZZERIA MINIMALISTA</span>
+        <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
+        <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Veamos el Menu</a></p>
+    </div>
+</header>
+<!-- Contenedor del Menú -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">EL MENÚ</h1>
+        <div class="w3-row w3-center w3-border w3-border-dark-grey">
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Ensaladas');">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Ensaladas</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Entrantes');">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Entrantes</div>
+            </a>
+        </div>
+
+        <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+            <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+            <p class="w3-text-grey">Tomates frescos, mozzarella fresca, albahaca fresca</p>
+            <img src="https://www.giallozafferano.com/images/260-26051/Pizza-Margherita_1200x800.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Margherita">
+            <hr>
+            <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
+            <p class="w3-text-grey">Cuatro quesos (mozzarella, parmesano, pecorino, jarlsberg)</p>
+            <img src="https://www.gozney.com/cdn/shop/articles/Four_Cheese_Pizza_Feng_Chen_-_Large1.jpg?v=1696533617" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Formaggio">
+            <hr>
+            <h1><b>Pollo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.00</span></h1>
+            <p class="w3-text-grey">Tomates frescos, mozzarella, pollo, cebollas</p>
+            <img src="https://myecomshop.imgix.net/store_17566/9b7e0b990ccd073e1a88af217987eb59.jpg?ixlib=php-1.2.1&ar=1:1" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Pollo">
+            <hr>
+            <h1><b>Pineapple'o'clock</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.50</span></h1>
+            <p class="w3-text-grey">Tomates frescos, mozzarella, piña fresca, tocino, albahaca fresca</p>
+            <img src="https://www.just-eat.ie/CmsAssets/media/Images/Blogs/IE/pineapple-pizza-brief-history/2018-04-18-1.jpg?h=800&w=1200&bid=c50bb7b997114f9fbb4de9af29405cb7&hash=95E5EAF7D1FA4FBDB70BBF0C55F54862" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Pineapple">
+            <hr>
+            <h1><b>Meat Town</b> <span class="w3-tag w3-red w3-round">¡Picante!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.00</span></h1>
+            <p class="w3-text-grey">Tomates frescos, mozzarella, pepperoni picante, salchicha picante, carne de res, pollo</p>
+            <img src="https://buy.am/media/image/2d/df/e2/Pizza-Meat-assorted-Pizza-Town.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Meat Town">
+            <hr>
+            <h1><b>Parma</b> <span class="w3-tag w3-grey w3-round">Nuevo</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.50</span></h1>
+            <p class="w3-text-grey">Tomates frescos, mozzarella, jamón de Parma, tocino, rúcula fresca</p>
+            <img src="https://eat.de/wp-content/uploads/2024/02/pizza-parma-2286.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Pizza Parma">
+        </div>
+
+        <div id="Ensaladas" class="w3-container menu w3-padding-32 w3-white">
+            <h1><b>Ensalada César</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.50</span></h1>
+            <p class="w3-text-grey">Lechuga romana, crutones, parmesano, aderezo César</p>
+            <hr>
+            <h1><b>Ensalada Griega</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+            <p class="w3-text-grey">Tomates, pepino, cebolla, queso feta, aceitunas</p>
+            <hr>
+            <h1><b>Ensalada Caprese</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$14.50</span></h1>
+            <p class="w3-text-grey">Tomates, mozzarella fresca, albahaca, aceite de oliva</p>
+        </div>
+
+        <div id="Entrantes" class="w3-container menu w3-padding-32 w3-white">
+            <h1><b>Pan de Ajo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
+            <p class="w3-text-grey">Ciabatta a la parrilla, mantequilla de ajo, cebollas</p>
+            <hr>
+            <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
+            <p class="w3-text-grey">Pan con pesto, tomates, cebolla, ajo</p>
+            <hr>
+            <h1><b>Champiñones Rellenos</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9.50</span></h1>
+            <p class="w3-text-grey">Champiñones rellenos de queso y hierbas</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contenedor Acerca de -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Acerca de</h1>
+        <p>Nuestra pizzería fue fundada por el Sr. Italiano, quien aporta un amor por la cocina italiana tradicional a cada plato que servimos. Ya sea que estés aquí para un bocado rápido o una comida completa, nos esforzamos por hacer que cada visita sea especial.</p>
+        <p><strong>¿El Chef?</strong> El mismo Sr. Italiano <img src="https://www.w3schools.com/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+        <p>Estamos orgullosos de nuestro ambiente acogedor e invitante, perfecto para cenas familiares o una noche con amigos.</p>
+        <img src="https://www.w3schools.com/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurante">
+        <h1><b>Horarios de Apertura</b></h1>
+        <p>Lunes y Martes CERRADO</p>
+        <p>Miércoles 10:00 - 24:00</p>
+        <p>Jueves 10:00 - 24:00</p>
+        <p>Viernes 10:00 - 12:00</p>
+        <p>Sábado 10:00 - 12:00</p>
+        <p>Domingo Cerrado</p>
+    </div>
+</div>
+
+<!-- Contenedor de Contacto -->
+<div class="w3-container w3-padding-64 w3-black w3-xlarge" id="contact">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contacto</h1>
+        <p>Estamos aquí para responder cualquier pregunta que puedas tener. Contáctanos y te responderemos lo antes posible.</p>
+        <p class="w3-center w3-large"><i class="fa fa-map-marker w3-margin-right"></i> Nueva York, EE. UU.</p>
+        <p class="w3-center w3-large"><i class="fa fa-phone w3-margin-right"></i> Teléfono: +00 151515</p>
+        <p class="w3-center w3-large"><i class="fa fa-envelope w3-margin-right"></i> Correo electrónico: 23202022@utfv.edu.mx</p>
+        <form action="/submit" target="_self" class="w3-center">
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Correo electrónico" required name="Email"></p>
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensaje" required name="Message"></p>
+            <p><button class="w3-button w3-light-grey w3-padding-large" type="submit">ENVIAR MENSAJE</button></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-red";
+    }
+    document.getElementById("myLink").click();
+</script>
